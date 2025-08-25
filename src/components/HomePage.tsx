@@ -2,92 +2,109 @@ import Link from 'next/link';
 
 export function HomePage() {
   return (
-    <div className="animate-fade-in">
+    <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
-      <section className="bg-white py-16 text-center">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-            Find Your Dream Job with JustIn
+      <section className="relative min-h-screen flex items-center justify-center px-4">
+        <div className="text-center max-w-4xl">
+          <h1 className="text-7xl md:text-8xl font-black tracking-tight mb-6">
+            TheOGs
           </h1>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
-            Swipe to connect with job opportunities worldwide. JustIn makes job
-            matching fast, intuitive, and tailored to your preferences.
+          <div className="w-20 h-[2px] bg-white mx-auto mb-8"></div>
+
+          <h2 className="text-2xl md:text-4xl font-light text-gray-300 mb-8">
+            Where{' '}
+            <span className="font-semibold text-white">Senior Developers</span>{' '}
+            Find{' '}
+            <span className="font-semibold text-white">
+              Elite Opportunities
+            </span>
+          </h2>
+
+          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+            The exclusive job platform for skilled software engineers, tech
+            leads, and experienced developers. Skip the junior noise—find roles
+            that match your expertise.
           </p>
-          <button className="inline-block bg-secondary text-white px-8 py-3 rounded-lg hover:bg-primary-hover transition-colors text-lg font-semibold">
-            Get Started
-          </button>
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Link href="/">
+              <button className="px-12 py-4 bg-white text-black font-semibold text-lg rounded-full hover:bg-gray-200 transition-colors duration-300">
+                Enter TheOGs
+              </button>
+            </Link>
+            <Link href="/about">
+              <button className="px-12 py-4 border border-gray-500 text-white font-semibold text-lg rounded-full hover:bg-white hover:text-black transition-colors duration-300">
+                Learn More
+              </button>
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Mission Section */}
-      <section className="py-16 bg-accent">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-primary mb-6 text-center">
-            Our Mission
-          </h2>
-          <p className="text-gray-700 max-w-3xl mx-auto text-center">
-            At JustIn, our mission is to revolutionize job searching by
-            connecting job seekers and employers globally through a seamless,
-            swipe-based platform. We aim to empower professionals in every
-            country—whether in the EU, US, India, UAE, Singapore, Australia, or
-            beyond—to find meaningful opportunities that match their skills and
-            aspirations.
+      <section className="py-24 px-4 bg-black">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">Our Vision</h2>
+          <p className="text-xl text-gray-400 leading-relaxed font-light">
+            At TheOGs, we connect skilled developers (3+ years) with companies
+            seeking experienced talent. No entry-level spam, no rockstar ninja
+            BS— just legitimate senior/mid-level/lead engineering roles at
+            companies that value skill and pay accordingly.
           </p>
         </div>
       </section>
 
-      {/* Perks Section */}
-      <section className="py-16 bg-white">
+      {/* Features Section */}
+      <section className="py-24 bg-black">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-primary mb-8 text-center">
-            Why Use JustIn?
+          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
+            Why TheOGs Choose Us
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-accent p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold text-primary mb-4">
-                Fast & Intuitive
-              </h3>
-              <p className="text-gray-700">
-                Swipe through job listings in seconds, finding roles that suit
-                your skills and preferences with ease.
-              </p>
-            </div>
-            <div className="bg-accent p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold text-primary mb-4">
-                Global Opportunities
-              </h3>
-              <p className="text-gray-700">
-                Access jobs from employers worldwide, from startups to
-                multinationals, in regions like the EU, US, and Asia.
-              </p>
-            </div>
-            <div className="bg-accent p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold text-primary mb-4">
-                Personalized Matches
-              </h3>
-              <p className="text-gray-700">
-                Our algorithm learns your preferences to deliver tailored job
-                recommendations, saving you time.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {[
+              {
+                title: 'Skilled-Only Roles',
+                desc: 'Every position requires 3+ years experience or demonstrated skill. Mid-level, Senior, Staff, and Lead positions only.',
+              },
+              {
+                title: 'Real Compensation',
+                desc: 'Transparent salary ranges. $80k-$400k+ positions from FAANG, unicorns, and top startups.',
+              },
+              {
+                title: 'Skip the BS',
+                desc: 'No rockstar ninjas. No unpaid challenges. Just companies that respect your time and expertise.',
+              },
+            ].map((f, i) => (
+              <div
+                key={i}
+                className="border border-gray-800 rounded-2xl p-8 hover:bg-white hover:text-black transition-colors duration-300"
+              >
+                <h3 className="text-2xl font-bold mb-4">{f.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{f.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary text-white text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-6">
-            Ready to Swipe Your Way to a New Job?
-          </h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Join thousands of professionals finding their dream jobs with
-            JustIn. Deactivate your account anytime via the app.
-          </p>
-          <button className="inline-block bg-secondary text-white px-8 py-3 rounded-lg hover:bg-primary-hover transition-colors text-lg font-semibold">
-            Join Now
+      <section className="py-24 px-4 bg-black text-center border-t border-gray-800">
+        <h2 className="text-4xl md:text-6xl font-bold mb-8">
+          Ready to Level Up <br /> Your Dev Career?
+        </h2>
+        <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-12">
+          TheOGs is for developers with 3+ years of experience or proven skills
+          who are tired of wading through entry-level noise.
+        </p>
+        <Link href="/">
+          <button className="px-12 py-5 bg-white text-black font-bold text-xl rounded-full hover:bg-gray-200 transition-colors duration-300">
+            Join the Elite
           </button>
-        </div>
+        </Link>
+        <p className="text-sm text-gray-500 mt-8">
+          3+ years experience or proven skills • $80k-$400k+ roles • Quality
+          positions only
+        </p>
       </section>
     </div>
   );

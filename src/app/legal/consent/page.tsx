@@ -5,6 +5,7 @@ import { useState } from 'react';
 export default function ConsentPage() {
   const [essentialCookies] = useState(true);
   const [analyticsCookies, setAnalyticsCookies] = useState(false);
+  const [saved, setSaved] = useState(false);
 
   const handleSave = () => {
     const consent = {
@@ -12,40 +13,64 @@ export default function ConsentPage() {
       analytics: analyticsCookies,
     };
     localStorage.setItem('cookieConsent', JSON.stringify(consent));
-    alert('Consent settings saved!');
+    setSaved(true);
+    setTimeout(() => setSaved(false), 3000);
   };
 
   return (
-    <div className="animate-fade-in max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg">
-      <h1 className="text-3xl font-bold text-primary mb-6">Cookie Consent</h1>
-      <p className="text-gray-600 mb-6">
-        JustIn uses cookies to enhance your experience and provide analytics to improve our services. Manage your preferences below.
+    <div className="animate-fade-in max-w-3xl mx-auto bg-black text-white p-8 border border-gray-800 shadow-xl">
+      <h1 className="text-3xl font-playfair font-bold mb-6">Cookie Consent</h1>
+      <p className="text-gray-400 mb-8 leading-relaxed">
+        TheOGs uses cookies to enhance your experience and provide analytics to
+        improve our services. Manage your preferences below.
       </p>
+
       <div className="space-y-6">
-        <div className="flex items-center border-b pb-4">
-          <input
-            type="checkbox"
-            checked={essentialCookies}
-            disabled
-            className="mr-3 h-5 w-5 text-primary"
-          />
-          <span className="text-gray-700">Essential Cookies (Required for app functionality)</span>
+        {/* Essential */}
+        <div className="flex items-center justify-between border-b border-gray-800 pb-4">
+          <label className="flex items-center gap-3">
+            <input
+              type="checkbox"
+              checked={essentialCookies}
+              disabled
+              className="h-5 w-5 accent-white cursor-not-allowed"
+            />
+            <span className="text-gray-300">
+              Essential Cookies (Required for app functionality)
+            </span>
+          </label>
         </div>
-        <div className="flex items-center border-b pb-4">
-          <input
-            type="checkbox"
-            checked={analyticsCookies}
-            onChange={(e) => setAnalyticsCookies(e.target.checked)}
-            className="mr-3 h-5 w-5 text-primary"
-          />
-          <span className="text-gray-700">Analytics Cookies (Help us improve the app)</span>
+
+        {/* Analytics */}
+        <div className="flex items-center justify-between border-b border-gray-800 pb-4">
+          <label className="flex items-center gap-3">
+            <input
+              type="checkbox"
+              checked={analyticsCookies}
+              onChange={(e) => setAnalyticsCookies(e.target.checked)}
+              className="h-5 w-5 accent-white"
+            />
+            <span className="text-gray-300">
+              Analytics Cookies (Help us improve the app)
+            </span>
+          </label>
         </div>
-        <button
-          onClick={handleSave}
-          className="bg-secondary text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors w-full md:w-auto"
-        >
-          Save Preferences
-        </button>
+
+        {/* Save Button */}
+        <div>
+          <button
+            onClick={handleSave}
+            className="px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors w-full md:w-auto"
+          >
+            Save Preferences
+          </button>
+
+          {saved && (
+            <p className="text-green-400 text-sm mt-4">
+              ✅ Preferences saved successfully.
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );

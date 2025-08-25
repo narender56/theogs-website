@@ -4,9 +4,7 @@ import { Header } from '@/components';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'JustIn - Your Legal Resource',
-  description:
-    'JustIn provides comprehensive legal information including user agreements, privacy policies, cookie policies, and copyright policies.',
+  title: 'TheOGs',
 };
 
 export default function RootLayout({
@@ -18,86 +16,81 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className="bg-accent text-gray-900">
+      <body className="bg-black text-white font-inter">
         <Header />
-        <main className="container mx-auto px-4 py-8">{children}</main>
-        <footer className="bg-gray-800 text-white py-8">
+        <main className="bg-black">{children}</main>
+
+        {/* Footer */}
+        <footer className="border-t border-gray-800 py-16">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              {/* About */}
               <div>
-                <h3 className="text-lg font-semibold mb-4">About JustIn</h3>
-                <p className="text-sm text-gray-300">
-                  JustIn connects job seekers and employers through an intuitive
-                  swipe-based platform, making job matching fast and efficient.
+                <h3 className="text-xl font-playfair font-semibold mb-4">
+                  About TheOGs
+                </h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  TheOGs connects experienced developers with elite
+                  opportunities at FAANG, unicorns, and leading startups. No
+                  junior noise—just serious roles for serious talent.
                 </p>
               </div>
+
+              {/* Legal */}
               <div>
-                <h3 className="text-lg font-semibold mb-4">Legal</h3>
-                <ul className="space-y-2 text-sm text-gray-300">
-                  <li>
-                    <Link
-                      href="/legal/user-agreement"
-                      className="hover:text-secondary transition-colors"
-                    >
-                      User Agreement
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/legal/privacy-policy"
-                      className="hover:text-secondary transition-colors"
-                    >
-                      Privacy Policy
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/legal/cookie-policy"
-                      className="hover:text-secondary transition-colors"
-                    >
-                      Cookie Policy
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/legal/copyright-policy"
-                      className="hover:text-secondary transition-colors"
-                    >
-                      Copyright Policy
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/legal/consent"
-                      className="hover:text-secondary transition-colors"
-                    >
-                      Consent Settings
-                    </Link>
-                  </li>
+                <h3 className="text-xl font-playfair font-semibold mb-4">
+                  Legal
+                </h3>
+                <ul className="space-y-2 text-sm text-gray-400">
+                  {[
+                    { name: 'User Agreement', href: '/legal/user-agreement' },
+                    { name: 'Privacy Policy', href: '/legal/privacy-policy' },
+                    { name: 'Cookie Policy', href: '/legal/cookie-policy' },
+                    {
+                      name: 'Copyright Policy',
+                      href: '/legal/copyright-policy',
+                    },
+                    { name: 'Consent Settings', href: '/legal/consent' },
+                  ].map((link, i) => (
+                    <li key={i}>
+                      <Link
+                        href={link.href}
+                        className="hover:text-white transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
+
+              {/* Contact */}
               <div>
-                <h3 className="text-lg font-semibold mb-4">Contact</h3>
-                <p className="text-sm text-gray-300">
+                <h3 className="text-xl font-playfair font-semibold mb-4">
+                  Contact
+                </h3>
+                <p className="text-sm text-gray-400">
                   Email:{' '}
                   <a
-                    href="mailto:support@justin.app"
-                    className="hover:text-secondary transition-colors"
+                    href="mailto:support@theogs.app"
+                    className="hover:text-white transition-colors"
                   >
-                    support@justin.app
+                    support@theogs.app
                   </a>
                 </p>
-                <p className="text-sm text-gray-300 mt-2">
-                  Follow us on social media for updates.
+                <p className="text-sm text-gray-400 mt-2">
+                  Follow us on LinkedIn, Twitter, and GitHub for updates.
                 </p>
               </div>
             </div>
-            <p className="text-center text-sm text-gray-400 mt-8">
-              &copy; {new Date().getFullYear()} JustIn. All rights reserved.
+
+            {/* Footer Bottom */}
+            <p className="text-center text-xs text-gray-500 mt-12">
+              &copy; {new Date().getFullYear()} TheOGs. All rights reserved.
             </p>
           </div>
         </footer>

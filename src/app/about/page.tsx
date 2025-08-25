@@ -1,13 +1,22 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function AboutPage() {
   return (
-    <div className="animate-fade-in-scale max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
-      <h1 className="text-3xl font-bold text-primary mb-6">About JustIn</h1>
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-primary mb-4">Our Story</h2>
-        <p className="text-gray-700">
-          JustIn was founded with a simple goal: to make job searching as
+    <div className="animate-fade-in-scale max-w-6xl mx-auto bg-black text-white p-10 border border-gray-800 shadow-xl">
+      {/* Heading */}
+      <h1 className="text-4xl font-playfair font-bold mb-6 text-center">
+        About <span className="text-gray-300">TheOGs</span>
+      </h1>
+
+      {/* Our Story */}
+      <section className="mb-12 pb-8 border-b border-gray-800">
+        <h2 className="text-2xl font-playfair font-semibold mb-4">Our Story</h2>
+        <p className="text-gray-300 leading-relaxed">
+          TheOGs was founded with a simple goal: to make job searching as
           intuitive as swiping on your favorite app. Launched in 2025, we’ve
           grown into a global platform connecting job seekers and employers
           across regions like the EU, US, India, UAE, Singapore, Australia, and
@@ -16,37 +25,84 @@ export default function AboutPage() {
           effective.
         </p>
       </section>
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-primary mb-4">Our Vision</h2>
-        <p className="text-gray-700">
+
+      {/* Our Vision */}
+      <section className="mb-12 pb-8 border-b border-gray-800">
+        <h2 className="text-2xl font-playfair font-semibold mb-4">
+          Our Vision
+        </h2>
+        <p className="text-gray-300 leading-relaxed">
           We envision a world where finding the right job or talent is seamless
-          and accessible for everyone, everywhere. JustIn empowers professionals
+          and accessible for everyone, everywhere. TheOGs empowers professionals
           to discover opportunities that align with their skills and
           aspirations, while helping employers find the perfect match with ease.
         </p>
       </section>
-      <section className="mb-8">
-        <h2 className="text-2xl font-semibold text-primary mb-4">Our Team</h2>
-        <p className="text-gray-700">
-          Our diverse team of innovators, based across the globe, is passionate
-          about transforming the job market. From developers to career experts,
-          we work together to ensure JustIn delivers a world-class experience,
-          compliant with global standards like GDPR, CCPA, and more.
-        </p>
+
+      {/* Our Team */}
+      <section className="mb-12 pb-8 border-b border-gray-800">
+        <h2 className="text-2xl font-playfair font-semibold mb-8 text-center">
+          Meet Our Team
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          {/* Person 1 */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="bg-gray-900 rounded-xl p-6 border border-gray-800 text-center shadow-lg"
+          >
+            <Image
+              src="/team/naren.png"
+              alt="Naren"
+              width={120}
+              height={120}
+              className="rounded-full mx-auto mb-4 border border-gray-700"
+            />
+            <h3 className="text-xl font-semibold">Naren</h3>
+            <p className="text-gray-400 text-sm mb-3">Founder & CEO</p>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Visionary leader passionate about bridging technology and careers.
+            </p>
+          </motion.div>
+
+          {/* Person 2 */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="bg-gray-900 rounded-xl p-6 border border-gray-800 text-center shadow-lg"
+          >
+            <Image
+              src="/team/vinay.jpeg"
+              alt="Vinay"
+              width={120}
+              height={120}
+              className="rounded-full mx-auto mb-4 border border-gray-700"
+            />
+            <h3 className="text-xl font-semibold">Vinay</h3>
+            <p className="text-gray-400 text-sm mb-3">Cloud Engineer</p>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Tech innovator building intelligent hiring tools for the future.
+            </p>
+          </motion.div>
+        </div>
       </section>
-      <section>
-        <h2 className="text-2xl font-semibold text-primary mb-4">Join Us</h2>
-        <p className="text-gray-700">
+
+      {/* Join Us */}
+      <section className="text-center">
+        <h2 className="text-2xl font-playfair font-semibold mb-4">Join Us</h2>
+        <p className="text-gray-300 mb-6">
           Ready to swipe your way to a new career?{' '}
-          <button className="text-primary hover:text-primary-hover font-semibold underline transition-colors">
-            Get started with JustIn
-          </button>{' '}
+          <Link
+            href="/get-started"
+            className="underline underline-offset-2 hover:text-gray-100 transition-colors font-semibold"
+          >
+            Get started with TheOGs
+          </Link>{' '}
           or contact us at{' '}
           <a
-            href="mailto:support@justin.app"
-            className="text-primary hover:text-primary-hover font-semibold underline transition-colors"
+            href="mailto:support@theogs.app"
+            className="underline underline-offset-2 hover:text-gray-100 transition-colors font-semibold"
           >
-            support@justin.app
+            support@theogs.app
           </a>{' '}
           to learn more.
         </p>
