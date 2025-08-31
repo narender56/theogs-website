@@ -76,14 +76,11 @@ export default function RootLayout({
                 <p className="text-sm text-gray-400">
                   Email:{' '}
                   <a
-                    href="mailto:support@theogs.app"
+                    href="mailto:theogsapp@gmail.com"
                     className="hover:text-white transition-colors"
                   >
-                    support@theogs.app
+                    theogsapp@gmail.com
                   </a>
-                </p>
-                <p className="text-sm text-gray-400 mt-2">
-                  Follow us on LinkedIn, Twitter, and GitHub for updates.
                 </p>
               </div>
             </div>

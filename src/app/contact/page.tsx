@@ -26,10 +26,10 @@ export default function ContactPage() {
         Have questions or feedback? Reach out to our team, and we’ll get back to
         you as soon as possible. You can also email us directly at{' '}
         <a
-          href="mailto:support@theogs.app"
+          href="mailto:theogsapp@gmail.com"
           className="underline underline-offset-2 hover:text-gray-100 transition-colors"
         >
-          support@theogs.app
+          theogsapp@gmail.com
         </a>
         .
       </p>

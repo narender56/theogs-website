@@ -61,7 +61,8 @@ export default function AboutPage() {
             <h3 className="text-xl font-semibold">Naren</h3>
             <p className="text-gray-400 text-sm mb-3">Founder & CEO</p>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Visionary leader passionate about bridging technology and careers.
+              Tech mastermind shaping careers and creating limitless
+              opportunities.
             </p>
           </motion.div>
 
@@ -99,10 +100,10 @@ export default function AboutPage() {
           </Link>{' '}
           or contact us at{' '}
           <a
-            href="mailto:support@theogs.app"
+            href="mailto:theogsapp@gmail.com"
             className="underline underline-offset-2 hover:text-gray-100 transition-colors font-semibold"
           >
-            support@theogs.app
+            theogsapp@gmail.com
           </a>{' '}
           to learn more.
         </p>
