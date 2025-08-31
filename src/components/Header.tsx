@@ -7,7 +7,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-black/70 text-white border-b border-gray-800">
+    <header className="sticky top-0 z-50 backdrop-blur-md bg-black/90 text-white">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Brand */}
         <h1 className="text-2xl font-playfair font-bold tracking-tight">

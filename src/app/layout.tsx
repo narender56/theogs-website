@@ -34,9 +34,10 @@ export default function RootLayout({
                   About TheOGs
                 </h3>
                 <p className="text-sm text-gray-400 leading-relaxed">
-                  TheOGs connects experienced developers with elite
-                  opportunities at FAANG, unicorns, and leading startups. No
-                  junior noise—just serious roles for serious talent.
+                  TheOGs connects proven developers with top-tier opportunities
+                  at unicorns, leading startups, and respected tech companies.
+                  We cut the noise so skilled talent and great companies connect
+                  faster.
                 </p>
               </div>
 
@@ -59,7 +60,7 @@ export default function RootLayout({
                     <li key={i}>
                       <Link
                         href={link.href}
-                        className="hover:text-white transition-colors"
+                        className="hover:text-black transition-colors"
                       >
                         {link.name}
                       </Link>
@@ -77,7 +78,7 @@ export default function RootLayout({
                   Email:{' '}
                   <a
                     href="mailto:theogsapp@gmail.com"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-black transition-colors"
                   >
                     theogsapp@gmail.com
                   </a>
