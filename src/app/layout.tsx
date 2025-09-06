@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Header } from '@/components';
 import Link from 'next/link';
+import { appConfig } from '@/config';
 
 export const metadata: Metadata = {
   title: 'TheOGs',
@@ -77,10 +78,10 @@ export default function RootLayout({
                 <p className="text-sm text-gray-400">
                   Email:{' '}
                   <a
-                    href="mailto:theogsapp@gmail.com"
+                    href={`mailto:${appConfig.supportEmail}`}
                     className="hover:text-black transition-colors"
                   >
-                    theogsapp@gmail.com
+                    {appConfig.supportEmail}
                   </a>
                 </p>
               </div>

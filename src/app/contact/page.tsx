@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { appConfig } from '@/config';
 
 export default function ContactPage() {
   const [name, setName] = useState('');
@@ -26,10 +27,10 @@ export default function ContactPage() {
         Have questions or feedback? Reach out to our team, and we’ll get back to
         you as soon as possible. You can also email us directly at{' '}
         <a
-          href="mailto:theogsapp@gmail.com"
+          href={`mailto:${appConfig.supportEmail}`}
           className="underline underline-offset-2 hover:text-gray-100 transition-colors"
         >
-          theogsapp@gmail.com
+          {appConfig.supportEmail}
         </a>
         .
       </p>

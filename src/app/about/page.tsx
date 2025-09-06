@@ -1,5 +1,6 @@
 'use client';
 
+import { appConfig } from '@/config';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -100,10 +101,10 @@ export default function AboutPage() {
           </Link>{' '}
           or contact us at{' '}
           <a
-            href="mailto:theogsapp@gmail.com"
+            href={`mailto:${appConfig.supportEmail}`}
             className="underline underline-offset-2 hover:text-gray-100 transition-colors font-semibold"
           >
-            theogsapp@gmail.com
+            {appConfig.supportEmail}
           </a>{' '}
           to learn more.
         </p>
